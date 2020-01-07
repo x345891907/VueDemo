@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+		<cpn2></cpn2>
+		</div>
+
+		<script type="text/javascript">
+			//创建第一个组件(子组件)
+			const cpnC1 = Vue.extend({
+				template:`
+				<div >
+					<h2>我是标题一</h2>
+					<h4>我是内容,哈哈哈哈哈</h4>
+				</div>
+				`
+			})
+			//创建第二个组件(父组件)
+			const cpnC2 = Vue.extend({
+				template:`
+				<div >
+					<h2>我是标题二</h2>
+					<h4>我是内容,哈哈哈哈哈</h4>
+					<cpn1></cpn1>
+				</div>
+				`,
+				components:{
+					cpn1: cpnC1
+				}
+				
+			})
+			
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋'
+				},
+				components:{
+					cpn2: cpnC2
+				}
+			})
+		</script>
+	</body>
+</html>

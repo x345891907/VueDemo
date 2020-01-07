@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+			<mycpn></mycpn>
+		</div>
+		<script type="text/javascript">
+			//创建组件构造器
+			const cpnC = Vue.extend({
+				template:`
+				<div >
+					<h2>我是标题</h2>
+					<h4>我是内容,哈哈哈哈哈</h4>
+				</div>
+				`
+			})
+			//注册组件(全局)
+			// Vue.component('my-cpn',cpnC)
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋'
+				},
+				components:{
+					//mycpn是使用时的标签名
+					'mycpn': cpnC
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script >
+		[v-cloak] {
+			display: none;
+		}
+	</script>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app" v-cloak>
+			<h3>{{message}}</h3>
+		</div>
+
+		<script type="text/javascript">
+			setTimeout(function(){
+				const app = new Vue({
+					el:'#app',//用于挂载要管理的元素
+					data:{//定义数据
+						message: '你好,傻秋'
+					}
+				})
+			},2000)
+		</script>
+	</body>
+</html>

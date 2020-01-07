@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+			<h2 :style="{fontSize: finalSize}">{{message}}</h2>
+		</div>
+
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋',
+					finalSize: '50px'
+				}
+			})
+		</script>
+	</body>
+</html>

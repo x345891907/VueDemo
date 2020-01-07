@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+		<h3>{{message}} , 阿秋</h3>
+		<!-- 会覆盖掉 , 阿秋 不会拼接-->
+		<h3 v-text="message">, 阿秋</h3>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋'
+				}
+			})
+		</script>
+	</body>
+</html>

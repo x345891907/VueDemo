@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.active {
+			color: red;
+		}
+	</style>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in movies" :class="getClass(index)" @click="getIndex(index)">{{index}}.{{item}}</li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			const app = new Vue({
+				el: '#app', //用于挂载要管理的元素
+				data: { //定义数据
+					message: '你好傻秋',
+					movies: ['海王', '复仇者联盟', '大话西游'],
+					flag: 0
+				},
+				methods:{
+					getIndex: function(index){
+						this.flag = index
+					},
+					getClass: function(index){
+						return {active: this.flag === index}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

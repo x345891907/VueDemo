@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+		<img src="https://cn.vuejs.org/images/logo.png" >
+		<!-- 
+		错误的语法
+		<img src="{{imgURL}}" >
+		<img src="imgURL" > 
+		-->
+		<!-- 正确的用法 -->
+		<img :src="imgURL" >
+		<img v-bind:src="imgURL" >
+		</div>
+
+		<script type="text/javascript">
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋',
+					imgURL: 'https://cn.vuejs.org/images/logo.png'
+				}
+			})
+		</script>
+	</body>
+</html>

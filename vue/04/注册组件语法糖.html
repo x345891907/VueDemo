@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<div id="app">
+			<cpn1></cpn1>
+			<cpn2></cpn2>
+		</div>
+
+		<script type="text/javascript">
+			//全局
+			Vue.component('cpn1',{
+				template:`
+				<div >
+					<h2>我是标题一</h2>
+					<h4>我是内容,哈哈哈哈哈</h4>
+				</div>
+				`
+			})
+			
+			const app = new Vue({
+				el:'#app',//用于挂载要管理的元素
+				data:{//定义数据
+					message: '你好,傻秋'
+				},
+				components:{
+					'cpn2': {
+							template:`
+							<div >
+								<h2>我是标题二</h2>
+								<h4>我是内容,哈哈哈哈哈</h4>
+							</div>
+							`
+						}
+				}
+			})
+		</script>
+	</body>
+</html>
